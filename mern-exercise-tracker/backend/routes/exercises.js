@@ -7,7 +7,8 @@ router.route("/").get((req, res) => {
     .catch((err) => res.status(400).json("Error: " + err));
 });
 
-router.route("/add").post((req, res) => {
+// router.route("/add").post((req, res) => {
+router.route("/").post((req, res) => {
   const username = req.body.username;
   const description = req.body.description;
   const duration = Number(req.body.duration);
@@ -38,7 +39,8 @@ router.route("/:id").delete((req, res) => {
     .catch((err) => res.status(400).json("Error: " + err));
 });
 
-router.route("/update/:id").post((req, res) => {
+// router.route("/update/:id").post((req, res) => {
+router.route("/:id").put((req, res) => {
   Exercise.findById(req.params.id)
     .then((exercise) => {
       exercise.username = req.body.username;

@@ -11,10 +11,10 @@ const userSchema = new Schema(
       trim: true,
       minlength: 3,
     },
+  },
+  {
+    timestamps: true,
   }
-  // {
-  //   timestamps: true,
-  // }
 );
 
 const User = mongoose.model("User", userSchema);
