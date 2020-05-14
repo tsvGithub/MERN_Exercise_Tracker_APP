@@ -1,20 +1,31 @@
 const express = require("express");
 const app = express();
+//cors allows ajax requests to skip cross-origin policy
+//& access recources from remote hosts
+//access to smth outside our server from our server
 const cors = require("cors");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 // require("dotenv").config();
 
 app.use(cors());
+//allow to parse json as server'll send&recieve json
 app.use(express.json());
 app.use(bodyParser.json());
 
 //------------------------
 //Routes
+//we have to require the files (importing)
+//to load the routers from other files.
 const exercisesRouter = require("./routes/exercises");
 const usersRouter = require("./routes/users");
+//Then the routers are added as middleware
+//& use these imported files.
 app.use("/exercises", exercisesRouter);
 app.use("/users", usersRouter);
+//The server URL is https://localhost:5000
+//if you add “/exercises” or “/users” on the end it'll
+//load the endpoints defined in the corresponding router files.
 
 //--------------------------
 //MongoDB Atlas
@@ -28,6 +39,7 @@ mongoose.connect(uri, {
 });
 
 const connection = mongoose.connection;
+//once the connection is open it's going to log text:
 connection.once("open", function () {
   console.log("MongoDB database connection established successfully");
 });
