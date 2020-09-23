@@ -70,8 +70,7 @@ router.route("/:id").delete((req, res) => {
 //http://localhost:5000/exercises/[id]
 //The /:id PUT endpoint updates an existing exercise item.
 router.route("/:id").put((req, res) => {
-  //first retrieve the old exercise item from the DB
-  //based on the id
+  //first retrieve the old exercise from the DB
   Exercise.findById(req.params.id)
     //set the exercise property values to
     //what’s available in the request body

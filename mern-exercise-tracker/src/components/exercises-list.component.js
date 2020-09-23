@@ -78,7 +78,7 @@ export default class ExercisesList extends Component {
     //then we update the state of exercises and
     //filter out (remove) the exercise that was deleted
 
-    //set state automatically update the page
+    //setState automatically update the page
     //with that new state.
     //this.state.exercises == array of exercises
     //filter array

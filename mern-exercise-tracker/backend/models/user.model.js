@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 
 //schema userSchema with single field 'username'
 //& some validations to 'username'
-//trim - trim whitespace off
+//trim - trim whitespaces off
 //timestamps automatically create filed for
 //when user was created & modified
 const userSchema = new Schema(

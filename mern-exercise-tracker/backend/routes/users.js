@@ -5,12 +5,10 @@ let User = require("../models/user.model");
 //READ
 //http://localhost:5000/users/
 router.route("/").get((req, res) => {
-  //We call Users.find() to get a list of all the
-  //users from the DB
+  // Users.find() gets all users from the DB
   User.find()
     //The find method returns a promise.
     //The results are returned in JSON format
-    //with res.json(users).
     .then((users) => res.json(users))
     .catch((err) => res.status(400).json("Error: " + err));
 });
@@ -23,7 +21,6 @@ router.route("/").post((req, res) => {
   //we create a new instance of User.
   const newUser = new User({ username });
   //Finally, the new user is saved to the DB
-  //with the save() method and we return “User added!”
   newUser
     .save()
     .then(() => res.json("User added!"))

@@ -1,26 +1,22 @@
 const express = require("express");
 const app = express();
-//cors allows ajax requests to skip cross-origin policy
-//& access recources from remote hosts
-//access to smth outside our server from our server
 const cors = require("cors");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
-// require("dotenv").config();
+require("dotenv").config();
+// console.log(process.env.ATLAS_URI);
 
 app.use(cors());
-//allow to parse json as server'll send&recieve json
+//parse json as server sends&recieves json
 app.use(express.json());
 app.use(bodyParser.json());
 
 //------------------------
 //Routes
-//we have to require the files (importing)
-//to load the routers from other files.
+// require files to load routers from other files
 const exercisesRouter = require("./routes/exercises");
 const usersRouter = require("./routes/users");
-//Then the routers are added as middleware
-//& use these imported files.
+// use routers
 app.use("/exercises", exercisesRouter);
 app.use("/users", usersRouter);
 //The server URL is https://localhost:5000
@@ -29,9 +25,7 @@ app.use("/users", usersRouter);
 
 //--------------------------
 //MongoDB Atlas
-// console.log(ATLAS_URI);
-// const uri = process.env.ATLAS_URI || "mongodb://localhost:27017/exercisetracker";
-const uri = "mongodb+srv://only4Me:only4MeDB@cluster0-ztzuu.mongodb.net/exercisetracker?retryWrites=true&w=majority";
+const uri = process.env.ATLAS_URI || "mongodb://localhost:27017/exercisetracker";
 mongoose.connect(uri, {
   useNewUrlParser: true,
   useCreateIndex: true,
@@ -41,7 +35,7 @@ mongoose.connect(uri, {
 const connection = mongoose.connection;
 //once the connection is open it's going to log text:
 connection.once("open", function () {
-  console.log("MongoDB database connection established successfully");
+  console.log("MongoDB Atlas connected successfully");
 });
 //---------------------------
 const PORT = process.env.PORT || 5000;
