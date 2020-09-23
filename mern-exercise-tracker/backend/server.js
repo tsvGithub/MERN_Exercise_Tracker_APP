@@ -2,14 +2,12 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const mongoose = require("mongoose");
-const bodyParser = require("body-parser");
 require("dotenv").config();
 // console.log(process.env.ATLAS_URI);
 
 app.use(cors());
 //parse json as server sends&recieves json
 app.use(express.json());
-app.use(bodyParser.json());
 
 //------------------------
 //Routes
