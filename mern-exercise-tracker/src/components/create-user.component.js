@@ -59,7 +59,7 @@ export default class CreateUser extends Component {
     //(backend see in routes>users.js)
     //This endpoint is expecting a JSON object in the request
     //body so we passed in the newUser object as a second argument.
-    axios.post("http://localhost:5000/users/", user).then((res) => console.log(res.data));
+    axios.post("http://localhost:8000/users/", user).then((res) => console.log(res.data));
 
     //after the Form is submitted set STATE to blank
     this.setState({

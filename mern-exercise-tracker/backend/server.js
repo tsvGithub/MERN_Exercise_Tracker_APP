@@ -23,7 +23,9 @@ app.use("/users", usersRouter);
 
 //--------------------------
 //MongoDB Atlas
+// console.log(process.env.ATLAS_URI);
 const uri = process.env.ATLAS_URI || "mongodb://localhost:27017/exercisetracker";
+console.log(uri);
 mongoose.connect(uri, {
   useNewUrlParser: true,
   useCreateIndex: true,
@@ -36,8 +38,8 @@ connection.once("open", function () {
   console.log("MongoDB Atlas connected successfully");
 });
 //---------------------------
-const PORT = process.env.PORT || 5000;
-
+const PORT = process.env.PORT || 8000;
+console.log(PORT);
 app.listen(PORT, () => {
   console.log(`Server is running on port: ${PORT}`);
 });

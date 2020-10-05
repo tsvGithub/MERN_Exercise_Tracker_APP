@@ -41,7 +41,7 @@ export default class EditExercise extends Component {
     //the backend endpoint http://localhost:5000/exercises/
     axios
       //get the current exercise from the DB
-      .get("http://localhost:5000/exercises/" + this.props.match.params.id)
+      .get("http://localhost:8000/exercises/" + this.props.match.params.id)
       //load the data into the state variables
       .then((response) => {
         this.setState({
@@ -61,7 +61,7 @@ export default class EditExercise extends Component {
     //The axios.get method sends an HTTP GET request to
     //the backend endpoint http://localhost:5000/users/
     axios
-      .get("http://localhost:5000/users/")
+      .get("http://localhost:8000/users/")
       .then((response) => {
         //if at least one user exists in DB
         if (response.data.length > 0) {
@@ -140,7 +140,7 @@ export default class EditExercise extends Component {
     //This endpoint is expecting a JSON object in the request
     //body so we passed in the newExercises object as a second argument.
     axios
-      .put("http://localhost:5000/exercises/" + this.props.match.params.id, exercise)
+      .put("http://localhost:8000/exercises/" + this.props.match.params.id, exercise)
       .then((res) => console.log(res.data));
 
     //After the form is submitted, the location is updated

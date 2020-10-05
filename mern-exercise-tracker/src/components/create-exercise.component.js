@@ -42,7 +42,7 @@ export default class CreateExercise extends Component {
     //The axios.get method sends an HTTP GET request to
     //the backend endpoint http://localhost:5000/users/
     axios
-      .get("http://localhost:5000/users/")
+      .get("http://localhost:8000/users/")
       .then((response) => {
         //if at least one user exists in DB
         if (response.data.length > 0) {
@@ -124,7 +124,7 @@ export default class CreateExercise extends Component {
     //(backend see in routes>exercises.js)
     //This endpoint is expecting a JSON object in the request
     //body so we passed in the newExercises object as a second argument.
-    axios.post("http://localhost:5000/exercises/", exercise).then((res) => console.log(res.data));
+    axios.post("http://localhost:8000/exercises/", exercise).then((res) => console.log(res.data));
 
     //After the form is submitted, the location is updated
     //so the user is taken back to the home page

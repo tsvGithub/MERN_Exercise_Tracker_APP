@@ -57,7 +57,7 @@ export default class ExercisesList extends Component {
     //the list of exercises to the state.
     axios
       //The axios.get method accesses the /exercises endpoint.
-      .get("http://localhost:5000/exercises/")
+      .get("http://localhost:8000/exercises/")
       //Then we assign response.data to the exercises property
       //of the component’s state object with the this.setState
       //method.
@@ -72,7 +72,7 @@ export default class ExercisesList extends Component {
   //5. This component will allow users to delete exercises
   deleteExercise(id) {
     //use the axios.delete request
-    axios.delete("http://localhost:5000/exercises/" + id).then((response) => {
+    axios.delete("http://localhost:8000/exercises/" + id).then((response) => {
       console.log(response.data);
     });
     //then we update the state of exercises and

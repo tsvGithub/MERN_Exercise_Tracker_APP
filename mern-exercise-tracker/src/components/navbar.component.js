@@ -9,7 +9,7 @@ export default class Navbar extends Component {
       <nav className="navbar navbar-dark bg-dark navbar-expand-lg">
         {/*Link to route with path='/' in App.js*/}
         <Link to="/" className="navbar-brand">
-          ExcerTracker
+          ExcerTracker:
         </Link>
         <div className="collapse navbar-collapse">
           <ul className="navbar-nav mr-auto">
