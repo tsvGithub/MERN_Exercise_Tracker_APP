@@ -17,7 +17,7 @@ const usersRouter = require("./routes/users");
 // use routers
 app.use("/exercises", exercisesRouter);
 app.use("/users", usersRouter);
-//The server URL is https://localhost:5000
+//The server URL is https://localhost:8000
 //if you add “/exercises” or “/users” on the end it'll
 //load the endpoints defined in the corresponding router files.
 

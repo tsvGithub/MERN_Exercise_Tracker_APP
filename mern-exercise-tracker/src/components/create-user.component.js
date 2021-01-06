@@ -55,7 +55,7 @@ export default class CreateUser extends Component {
 
     //----------------------
     //The axios.post method sends an HTTP POST request to
-    //the backend endpoint http://localhost:5000/users/
+    //the backend endpoint http://localhost:8000/users/
     //(backend see in routes>users.js)
     //This endpoint is expecting a JSON object in the request
     //body so we passed in the newUser object as a second argument.
